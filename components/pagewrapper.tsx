@@ -9,7 +9,7 @@ export const Pagewrapper = ({
 }) => {
   const childStyle = classNames("bg-slate-50 flex-grow text-black p-2 mt-20", {
     ["sm:pl-[6rem]"]: toggleCollapse,
-    ["pl-[20.4rem]"]: !toggleCollapse,
+    ["pl-[18.5rem]"]: !toggleCollapse,
   });
 
   return <div className={childStyle}>{children}</div>;

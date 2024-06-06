@@ -16,12 +16,12 @@ export const Header = ({
   };
 
   const headerStyle = classNames(
-    "fixed bg-[#fffff] w-full z-[0] px-4 shadow-sm shadow-slate-500/40  ",
+    "fixed bg-[#fffff] w-full z-[70] px-4 shadow-sm shadow-slate-500/40  ",
     { ["sm:pl-[6rem] "]: toggleCollapse, ["sm:pl-[20rem] "]: !toggleCollapse }
   );
   return (
     <header className={headerStyle}>
-      <div className="h-[4.5rem] flex items-center justify-between ">
+      <div className="h-[4.5rem] flex items-center justify-between bg-white">
         <div className="flex items-center order-2 sm:order-1">
           <button
             onClick={sideBarToggle}
