@@ -1,31 +1,30 @@
-import type { Metadata } from "next";
+"use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
 import { Header } from "@/components/header";
 import { Pagewrapper } from "@/components/pagewrapper";
 import { Sidebar } from "@/components/sidebar";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "To-Do Dashboard",
-  description:
-    "The “To-Do Dashboard” is a simple dashboard application to track to-do tasks",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [toggleCollapse, setToggleCollapse] = useState(false);
   return (
     <html lang="en">
       <body className={inter.className}>
         <div className="flex min-h-screen">
-          <Header></Header>
-          <Sidebar></Sidebar>
-          <Pagewrapper>{children}</Pagewrapper>
+          <Sidebar toggleCollapse={toggleCollapse}></Sidebar>
+          <Header
+            toggleCollapse={toggleCollapse}
+            setToggleCollapse={setToggleCollapse}
+          ></Header>
+
+          <Pagewrapper toggleCollapse={toggleCollapse}>{children}</Pagewrapper>
         </div>
       </body>
     </html>
