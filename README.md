@@ -26,8 +26,8 @@ The application is deployed on AWS Amplify. You can access it using the followin
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/todo-dashboard-app.git
-   cd todo-dashboard-app
+   git clone https://github.com/dinethdf/todo-dashboard-2024-Q2-dinethdf.git
+   cd todo-dashboard-2024-Q2-dinethdf
    ```
 
 2. **Install dependencies:**
@@ -43,6 +43,12 @@ The application is deployed on AWS Amplify. You can access it using the followin
    ```
 
    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+4. **Run the Build :**
+
+   ```bash
+   npm run build
+   ```
 
 ## Usage
 
@@ -61,29 +67,6 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Project Structure
-
-```plaintext
-/
-├── components/           # React components
-│   ├── Task.tsx          # Task component
-│   ├── TaskList.tsx      # Task list component
-├── pages/                # Next.js pages
-│   ├── index.tsx         # Main dashboard page
-├── styles/               # CSS and Tailwind styles
-│   ├── globals.css       # Global styles
-├── public/               # Public assets
-├── types/                # TypeScript types
-│   ├── task.d.ts         # Task type definition
-├── utils/                # Utility functions
-│   ├── api.ts            # API functions
-├── .gitignore            # Git ignore file
-├── package.json          # NPM package file
-├── README.md             # Project README file
-├── tailwind.config.js    # Tailwind CSS configuration
-├── tsconfig.json         # TypeScript configuration
-```
 
 ## Contributing
 
