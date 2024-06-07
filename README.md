@@ -6,7 +6,7 @@ This is a Todo Dashboard application built with Next.js and TypeScript. The app 
 
 The application is deployed on AWS Amplify. You can access it using the following link:
 
-[Todo Dashboard App on AWS Amplify](https://deploy.d1ylx68dn6n9jz.amplifyapp.com/)
+[Todo Dashboard App on AWS Amplify](https://main.d2brf66mhehf1i.amplifyapp.com/)
 
 ## Features
 
