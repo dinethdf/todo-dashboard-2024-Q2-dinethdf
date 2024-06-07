@@ -1,5 +1,6 @@
-import { Chart } from "./../components/Chart";
+import { TableData } from "../components/TableData";
 
+import { ActivityFeed } from "@/components/ActivityFeed";
 export default function Home() {
   return (
     <>
@@ -13,12 +14,10 @@ export default function Home() {
       </div>
       <div className="ml-auto mr-2">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 my-1">
-          <Chart></Chart>
-          <div className="bg-black border-2 rounded-xl p-2 flex flex-col items-center justify-center">
-            Hellosssss
-          </div>
-          <div className="bg-black border-2 rounded-xl p-2 flex flex-col items-center justify-center ">
-            Hellosssss
+          <TableData></TableData>
+          <div className="bg-yellow-200 border-2 rounded-xl p-2 flex flex-col items-center justify-center"></div>
+          <div className="rounded-xl flex flex-col items-start justify-start pt-0 mt-0 ">
+            <ActivityFeed />
           </div>
         </div>
       </div>

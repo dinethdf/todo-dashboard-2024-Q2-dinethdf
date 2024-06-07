@@ -19,15 +19,41 @@ import {
   Input,
 } from "./MTailwind";
 
-export const Chart = () => {
+export const TableData = async () => {
+  let response = await fetch(
+    "https://6363c8f68a3337d9a2e7d805.mockapi.io/api/to-do"
+  );
+  let data = await response.json();
+  data = data.slice(0, 8);
+
+  const data_up = data.map((data) => {
+    const d = new Date(data.createdAt);
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    return (data.createdAt = months[d.getMonth() + 1] + "-" + d.getDate());
+  });
+
   return (
     <div className="bg-white border-2 rounded-xl p-2 flex flex-col items-center justify-center md:col-span-2 md:row-span-2">
       <Card className="h-full w-full">
         <CardHeader floated={false} shadow={false} className="rounded-none">
-          <div className="mb-1 flex flex-col justify-between md:flex-row md:items-center">
+          <div className="mb-0 flex flex-col justify-between md:flex-row md:items-center">
             <div>
               <Typography
-                className="text-[16px] font-[600] text-[#000]"
+                className="text-[20px] font-[600] text-[#000]"
                 variant="h5"
                 color="blue-gray"
               >
@@ -37,13 +63,13 @@ export const Chart = () => {
           </div>
         </CardHeader>
         <CardBody className="overflow-scroll px-0">
-          <table className="w-full min-w-max table-auto text-left">
+          <table className="w-full table-auto text-left">
             <thead>
               <tr>
                 {TABLE_HEAD.map((head) => (
                   <th
                     key={head}
-                    className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                    className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4 pl-2"
                   >
                     <Typography
                       variant="small"
@@ -57,18 +83,9 @@ export const Chart = () => {
               </tr>
             </thead>
             <tbody>
-              {TABLE_ROWS.map(
+              {data.map(
                 (
-                  {
-                    img,
-                    name,
-                    taskName,
-                    date,
-                    status,
-                    account,
-                    accountNumber,
-                    expiry,
-                  },
+                  { id, createdBy, priority, todo, completed, createdAt },
                   index
                 ) => {
                   const isLast = index === TABLE_ROWS.length - 1;
@@ -80,17 +97,32 @@ export const Chart = () => {
                     <tr key={index}>
                       <td className={classes}>
                         <div className="flex items-center gap-1 ">
-                          <Checkbox color="blue" defaultChecked />
+                          {completed === true ? (
+                            <Checkbox color="green" defaultChecked />
+                          ) : (
+                            <Checkbox color="amber" icon={"-"} defaultChecked />
+                          )}
                         </div>
                       </td>
                       <td className={classes}>
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal "
+                          className="font-norma font-[500] "
                         >
-                          {taskName}
+                          {todo}
                         </Typography>
+                        {completed === true ? (
+                          ""
+                        ) : (
+                          <Typography
+                            variant="paragraph"
+                            color="blue-gray"
+                            className="font-normal text-[12px] pt-1 "
+                          >
+                            Mark as done
+                          </Typography>
+                        )}
                       </td>
                       <td className={classes}>
                         <Typography
@@ -98,19 +130,20 @@ export const Chart = () => {
                           color="blue-gray"
                           className="font-normal"
                         >
-                          {date}
+                          {createdBy}
                         </Typography>
                       </td>
                       <td className={classes}>
                         <div className="w-max">
                           <Chip
+                            className="font-[600]"
                             size="sm"
                             variant="ghost"
-                            value={status}
+                            value={priority}
                             color={
-                              status === "paid"
-                                ? "green"
-                                : status === "pending"
+                              priority === "LOW"
+                                ? "blue"
+                                : priority === "HIGH"
                                 ? "amber"
                                 : "red"
                             }
@@ -119,13 +152,13 @@ export const Chart = () => {
                       </td>
                       <td className={classes}>
                         <div className="flex items-center gap-3">
-                          <div className="flex flex-col">
+                          <div className="flex flex-col w-16">
                             <Typography
                               variant="small"
                               color="blue-gray"
                               className="font-normal"
                             >
-                              Sep -17
+                              {createdAt}
                             </Typography>
                           </div>
                         </div>
