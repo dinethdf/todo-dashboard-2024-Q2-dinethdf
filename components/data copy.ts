@@ -1,6 +1,4 @@
-import { useState } from "react";
 export const TABLE_HEAD = ["Status", "Task Name", "Created by", "Priority", "Date"];
-
 export const TABLE_ROWS = [
   {
     img: "https://docs.material-tailwind.com/img/logos/logo-spotify.svg",
