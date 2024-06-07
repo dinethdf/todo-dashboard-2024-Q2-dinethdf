@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import { Alert, Button, Typography } from "./MTailwind";
 
 function Icon() {
@@ -18,9 +20,20 @@ function Icon() {
 }
 
 export function AlertWithContent() {
+  const [open, setOpen] = React.useState(true);
+
   return (
     <>
-      <Alert className="w-full bg-white">
+      {!open && (
+        <Button className="absolute " onClick={() => setOpen(true)}>
+          Show Alert
+        </Button>
+      )}
+      <Alert
+        open={open}
+        className="w-full bg-white"
+        onClose={() => setOpen(false)}
+      >
         <Typography variant="h5" color="black">
           Welcome back, John Doe
         </Typography>
