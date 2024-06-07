@@ -1,4 +1,4 @@
-import { TABLE_HEAD, TABLE_ROWS } from "./data";
+import { TABLE_HEAD } from "./data";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import {
   ArrowDownTrayIcon,
@@ -88,10 +88,7 @@ export const TableData = async () => {
                   { id, createdBy, priority, todo, completed, createdAt },
                   index
                 ) => {
-                  const isLast = index === TABLE_ROWS.length - 1;
-                  const classes = isLast
-                    ? "p-2 "
-                    : "p-2 border-b border-blue-gray-50";
+                  const classes = "p-2";
 
                   return (
                     <tr key={index}>

@@ -1,5 +1,5 @@
 import { TableData } from "../components/TableData";
-
+import { AlertWithContent } from "../components/Alert";
 import { ActivityFeed } from "@/components/ActivityFeed";
 export default function Home() {
   return (
@@ -7,8 +7,8 @@ export default function Home() {
       <div className="ml-auto mr-2 mb-8">
         <div className="grid md:grid-cols-1 lg:grid-cols-1   gap-2 my-2">
           {" "}
-          <div className="bg-yellow-800 border-2 rounded-xl p-2 flex flex-col items-center justify-center">
-            Notification
+          <div className="bg-white border-3 rounded-xl flex flex-col items-center justify-center">
+            <AlertWithContent />
           </div>
         </div>
       </div>
