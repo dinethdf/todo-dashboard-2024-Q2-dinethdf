@@ -31,7 +31,7 @@ export function AlertWithContent() {
       )}
       <Alert
         open={open}
-        className="w-full bg-white border-2 border-gray-400"
+        className="w-full bg-white border-2 border-gray-300"
         onClose={() => setOpen(false)}
       >
         <Typography variant="h5" color="black">
