@@ -37,7 +37,7 @@ export const Header = ({
             <FaRegBell />
           </button>
 
-          <div className="h-10 w-10 rounded-full pl-1 bg-[url('http://localhost:3000/img/user.png')]"></div>
+          <div className="h-10 w-10 rounded-full pl-1 bg-cover bg-[url('https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg')]"></div>
 
           <button className="float-right w-[30px] h-[30px] flex items-center justify-center mr-3">
             <IoIosArrowDown />
