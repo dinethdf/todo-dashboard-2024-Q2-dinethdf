@@ -8,6 +8,8 @@ The application is deployed on AWS Amplify. You can access it using the followin
 
 [Todo Dashboard App on AWS Amplify](https://your-amplify-app-url.amazonaws.com)
 
+![Todo Dashboard Screenshot](public/img/screenshot.png)
+
 ## Features
 
 - View a list of tasks
